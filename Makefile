@@ -1,7 +1,7 @@
 .SECONDEXPANSION:
 
 
-SRC := client.c echo_server.c
+SRC := client.c echo_server.c terminal.c
 OBJ := $(SRC:%.c=%.o)
 EXE := client echo_server
 
@@ -22,6 +22,9 @@ $(EXE): $$@.o
 
 clean:
 	rm -f $(OBJ) $(EXE)
+
+client.o: terminal.h
+client: terminal.o
 
 
 .DEFAULT_GOAL := all
