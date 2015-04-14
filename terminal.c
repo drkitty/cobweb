@@ -12,7 +12,6 @@ void t_init()
     struct termios termios;
     if (tcgetattr(STDIN_FILENO, &termios) != 0)
         exit(1);
-    termios.c_iflag &= ~(INLCR | IGNCR | ICRNL);
     termios.c_lflag &= ~(ICANON | ECHO);
     termios.c_oflag &= ~(OCRNL | ONOCR | ONLRET);
     if (tcsetattr(STDIN_FILENO, TCSANOW, &termios) != 0)
