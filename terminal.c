@@ -26,6 +26,18 @@ void t_reset()
 }
 
 
+void t_save()
+{
+    fputs("\e7", stdout);
+}
+
+
+void t_restore()
+{
+    fputs("\e8", stdout);
+}
+
+
 struct pos t_getpos(char* extra)
 {
     enum {

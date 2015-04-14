@@ -10,19 +10,19 @@
 int main()
 {
     t_init();
-    t_reset();
+    /*t_reset();*/
 
 
     {
-        struct pos pos = {1024, 1024};
-        t_setpos(&pos);
+        t_save();
+
+        struct pos bottom_right = {1024, 1024};
+        t_setpos(&bottom_right);
 
         char extra[32];
         struct pos max = t_getpos(extra);
 
-        pos.line = 0;
-        pos.col = 0;
-        t_setpos(&pos);
+        t_restore();
         printf("%hu, %hu\n", max.line, max.col);
     }
 
