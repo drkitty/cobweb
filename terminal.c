@@ -1,4 +1,4 @@
-#include "terminal.h"
+#include "terminal_internal.h"
 
 #include <stdbool.h>
 #include <stdio.h>
